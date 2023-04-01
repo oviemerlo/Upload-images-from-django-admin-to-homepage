@@ -1,0 +1,48 @@
+<!-- templates/home.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ojayballoons</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://kit.fontawesome.com/d1502c7609.js"></script>   
+</head>
+<body>
+
+    {% load static %} 
+
+    <img src="{% static 'images/logo.jpg' %}" alt="logo">
+
+    <section id="header">
+        <a href="#"><img src="photo/logo.jpg" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="delivery.html">Delivery Zone</a></li> 
+                <li><a href="https://www.facebook.com/oj.ojafe" target="_blank"><i class="fa-brands fa-facebook fa-2xl"></i></a></li>
+                <li><a href="https://www.instagram.com/ojayballoons/" target="_blank"><i class="fa-brands fa-square-instagram fa-2xl"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-square-phone-flip fa-2xl"></i>(778) 957-4905</a></li>
+                <li><a href="ojayballoons@yahoo.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl"></i></a></li>                                                                               
+                                  
+            </ul>
+
+        </div>
+        
+    </section>
+    
+
+    <h1>Django Image Uploading</h1>
+    <ul>
+        {% for post in object_list %}
+            <h2>{{ post.title }}</h2>
+            <img src="{{ post.cover.url }}" alt="{{ post.title}}">
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
